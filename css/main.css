@@ -38,7 +38,7 @@ header {
 }
 
 .logo h1 {
-    font-size: 2vw;
+    font-size: 1.5vw;
     margin: auto 0.8em;
     font-weight: bold;
     text-align: center;
@@ -71,34 +71,6 @@ nav ul li a {
     color: black;
     transition: 0.3s ease;
 }
-
-/* OLD NAV */
-/* nav {
-   width: 50%;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    margin: auto;
-}
-
-nav ul li {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    align-items: center;
-    width: 50%;
-}
-
-nav ul li a {
-    justify-content: space-around;
-    text-decoration: none;
-    font-weight: normal;
-    color: black;
-    transition: 0.3s ease;
-} */
 
 nav ul li a:hover {
     color: #FFCA29;
@@ -218,12 +190,15 @@ figure.hero {
 }
 
 .banner-hero {
-    position: absolute;
-    top: 5em;
-    left: 4.8em;
+    margin-top: 5em;
+    margin-left: 4em;
     font-size: 2em;
     width: 60%;
     color: #fff;
+}
+
+.banner-hero h1 {
+    width: 100%;
 }
 
 
@@ -393,6 +368,15 @@ figure.hero {
     font-size: 2em;
 
 } 
+
+section.profil {
+    background-image: url(/img/grayscale.png);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 
 .container-profil {
     display: grid;
@@ -698,14 +682,20 @@ li.googlemap {
     border: 2px solid #1A73E8;
     margin-top: 0.8em;
     padding: 0.4em 1em;
-    width: max-content;
+    max-width: 180px;
     border-radius: 50px;
     display: flex;
     justify-content: space-between;
     font-size: 0.85em;
-    line-height: 1.7em;
+    line-height: 2em;
     transition: 0.3s all ease;
 }
+
+/* .googlemap img{
+    width: 20px;
+    height: 28px;
+    margin-right: auto;
+} */
 
 li.googlemap:hover {
     background-color: #1A73E8;
@@ -714,12 +704,12 @@ li.googlemap:hover {
 li.googlemap a {
     text-decoration: none;
     color: #fff;
+    padding-right: 1em;
 }
 
 /* RESPONSIVE BREAKPOINT */
 
 @media only screen and (min-width: 320px) and (max-width: 667px) {
-
 
     .logo {
         margin-left: 1em;
@@ -771,9 +761,11 @@ li.googlemap a {
     }
 
     nav ul.show {
+        display: flex;
         transform: translateX(0);
         opacity: 1;
         pointer-events: all;
+        overflow-x: hidden;
     }
 
     div.ham {
@@ -823,19 +815,18 @@ li.googlemap a {
 
     
     .banner-hero {
+        margin-top: 5em;
+        margin-left: 1.2em;
         font-size: 4vw;
         width: 100%;
         color: #fff;
-        margin-top: 1em;
-        padding-right: auto;
-        left: 2em;
     }
 
     .banner-hero h1 {
-        padding-right: 1em;
-        margin-right: 1em;
-        margin-bottom: 1em;
+        width: 80%;
+        padding-right: 0.5em;
     }
+
 
     .banner-hero ul {
        display: flex;
@@ -848,7 +839,7 @@ li.googlemap a {
         margin-top: 2em;
         display: inline-block;
         text-decoration: none;
-        font-size: 4vw;
+        font-size: 3vw;
         color: black;
         background-color: #FFCA29;
         padding: 0.85em 1.5em;
@@ -883,11 +874,34 @@ li.googlemap a {
 
     .content-table {
         border-collapse: collapse;
-        margin: auto;
-        font-size: 3vw;
+        margin: 1em auto;
+        min-width: 200px;
+        font-size: 0.85em;
         border-radius: 5px 5px 0 0;
         overflow: hidden;
         width: 100%;
+    }
+    
+    .images-place {
+        min-width: 100px;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1em;
+        justify-items: center;
+    }
+    
+
+   
+    section.harga {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1em;
+        justify-items: stretch;
+        padding: 1em;
+      
     }
 
     .footer-container {
@@ -932,7 +946,9 @@ li.googlemap a {
         text-align: justify;
     }
 
-    
-   
+    section.profil {
+        background-size: 100%;
+
+    }
     
 }
